@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adivina el Número</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="contenedor">
+    <h1>🎯 Adivina el Número</h1>
+
+    {% with mensajes = get_flashed_messages() %}
+      {% if mensajes %}
+        <ul class="flash">
+        {% for m in mensajes %}
+          <li>{{ m }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    {% block contenido %}{% endblock %}
+  </div>
+</body>
+</html>
